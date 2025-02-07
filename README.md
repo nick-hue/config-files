@@ -2,7 +2,7 @@
 
 ## Config Files
 * .zshrc : zsh config file
-* .tmux.conf : zsh config file
+* .tmux.conf : tmux config file
 
 
 ## Scripts
