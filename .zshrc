@@ -94,8 +94,11 @@ alias home='cd ~'
 # My keybinds
 bindkey '^H' backward-kill-word
 
-#ZSH_TMUX_AUTOSTART=true
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+bindkey '^R' fzf-history-search
 
+#ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -143,3 +146,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
