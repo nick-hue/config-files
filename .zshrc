@@ -94,10 +94,6 @@ alias home='cd ~'
 # My keybinds
 bindkey '^H' backward-kill-word
 
-[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
-[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
-bindkey '^R' fzf-history-search
-
 #ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 
