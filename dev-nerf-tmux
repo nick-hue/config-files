@@ -1,0 +1,39 @@
+#!/bin/zsh
+
+win_id=$(xdotool getactivewindow)
+
+# Resize the terminal window to 150x40 (columns x rows)
+xdotool windowsize $win_id 1500 800  # Adjust the pixel size as needed
+
+# Start a new tmux session named "my_session"
+session_name="nerf_session"
+tmux new-session -d -s $session_name
+
+# Create window 1 and run "conda activate nerfstudio"
+tmux rename-window -t $session_name:1 'nerfstudio-1'
+tmux send-keys -t $session_name:1 'conda activate nerfstudio' C-m
+tmux send-keys -t $session_name:1 'cd ~/nerfstudio' C-m  # Change to desired directory
+tmux send-keys -t $session_name:1 'clear' C-m  # Change to desired directory
+
+
+# Create window 2 and run "conda activate nerfstudio"
+tmux new-window -t $session_name:2 -n 'nerfstudio-2'
+tmux send-keys -t $session_name:2 'conda activate nerfstudio' C-m
+tmux send-keys -t $session_name:2 'cd ~/nerfstudio' C-m  # Change to desired directory
+tmux send-keys -t $session_name:2 'clear' C-m  # Change to desired directory
+
+
+# Create window 3 for Shotcut (no command needed, just the name)
+tmux new-window -t $session_name:3 -n 'shotcut'
+
+# Create window 4 for scripts (no command needed, just the name)
+tmux new-window -t $session_name:4 -n 'scripts'
+tmux send-keys -t $session_name:4 'cd ~/scripts' C-m  # Change to desired directory
+tmux send-keys -t $session_name:4 'clear' C-m  # Change to desired directory
+
+
+# Go back to the first window
+tmux select-window -t 1
+
+# Attach to the tmux session
+tmux attach -t $session_name
