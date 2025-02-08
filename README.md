@@ -6,4 +6,4 @@
 
 
 ## Scripts
-* dev-nerf-tmux : sh script that launches a tmux session for nerfstudio usage
+* dev-nerf-tmux : shell script that launches a tmux session for nerfstudio usage
