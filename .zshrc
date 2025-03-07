@@ -89,7 +89,11 @@ alias mv='mv -i'
 alias rm='rm -iv'
 alias ps='ps auxf'
 alias home='cd ~'
+alias cat='batcat'
 #alias cd.. ='cd ..'
+
+export PATH="/usr/local/cuda-11/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda-11/lib64:$LD_LIBRARY_PATH"
 
 # My keybinds
 bindkey '^H' backward-kill-word
@@ -98,6 +102,11 @@ bindkey '^H' backward-kill-word
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+
+# autocomplete from chatgpt
+# autoload -Uz compinit
+# compinit
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
